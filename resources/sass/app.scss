@@ -6,3 +6,63 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.delete-popup {
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.05);
+    // filter: blur(4px);
+    // backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sure {
+        background: rgba($color: #fff, $alpha: 0.75);
+        padding: 30px;
+        width: 300px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .buttons {
+            display: flex;
+            justify-content: center;
+            button {
+                background: grey;
+                color: white;
+                margin: 5px;
+                padding: 5px 15px;
+                border-radius: 3px;
+                &:hover {
+                    background: rgba($color: grey, $alpha: 0.85);
+                }
+            }
+            form {
+                width: fit-content;
+                input {
+                    background: grey;
+                    color: white;
+                    margin: 5px;
+                    padding: 5px 15px;
+                    border-radius: 3px;
+                    width: fit-content;
+                    border: none;
+                    &:hover {
+                        background: rgba($color: grey, $alpha: 0.85);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.delete-this {
+    background: none;
+    border: none;
+    color: #3490dc;
+    padding: 0;
+}

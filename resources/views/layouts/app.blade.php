@@ -72,9 +72,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" id="root">
             @yield('content')
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/js/app.js"></script>
 </body>
 </html>

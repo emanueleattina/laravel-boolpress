@@ -76,8 +76,8 @@
             <div class="content">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1>{{ $post->title }}</h1>
-                        <p>{{ $post->content }}</p>
+                        <h1>{{ $post['title'] }}</h1>
+                        <p>{{ $post['content'] }}</p>
                     </div>
                 </div>
             </div>

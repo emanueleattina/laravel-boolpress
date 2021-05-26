@@ -10942,3 +10942,72 @@ a.text-dark:focus {
   }
 }
 
+.delete-popup {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-popup .sure {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  width: 300px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-popup .sure .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-popup .sure .buttons button {
+  background: grey;
+  color: white;
+  margin: 5px;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+.delete-popup .sure .buttons button:hover {
+  background: rgba(128, 128, 128, 0.85);
+}
+
+.delete-popup .sure .buttons form {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.delete-popup .sure .buttons form input {
+  background: grey;
+  color: white;
+  margin: 5px;
+  padding: 5px 15px;
+  border-radius: 3px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+}
+
+.delete-popup .sure .buttons form input:hover {
+  background: rgba(128, 128, 128, 0.85);
+}
+
+.delete-this {
+  background: none;
+  border: none;
+  color: #3490dc;
+  padding: 0;
+}
+
