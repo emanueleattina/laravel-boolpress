@@ -61,9 +61,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Post $post, $slug)
     {
-        //
+        $post = Post::where('slug', '=', $slug)->first();
+
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -108,7 +110,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index');
     }
 
     private function generateSlug(string $title, bool $change = true) {
