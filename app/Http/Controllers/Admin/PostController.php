@@ -61,11 +61,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post, $slug)
+    public function show(Post $post)
     {
-        $post = Post::where('slug', '=', $slug)->first();
-
-        return view('admin.posts.show', compact('post'));
+        // $post = Post::where('slug', '=', $slug)->first();
+        dd('ciao');
+        return view('admin.posts.show', ['post' => $post]);
     }
 
     /**
