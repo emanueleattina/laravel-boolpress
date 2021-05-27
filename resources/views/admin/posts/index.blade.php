@@ -16,13 +16,15 @@
                 <div class="card-body">
                     {{ $post->content }}
                     <div class="d-flex justify-content-between">
-                        <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">Edit</a>
-                        <a href="{{ route('admin.posts.show', ['post' => $post->slug]) }}">Show</a>
-                        {{-- <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post">
+                        <a class="btn btn-info" href="{{ route('admin.posts.show', ['post' => $post->slug]) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">Edit</a>
+                        <a class="btn btn-danger" onclick="event.preventDefault(); this.nextElementSibling.submit();">
+                            Delete
+                        </a>
+                        <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="POST" class="d-none">
                             @csrf
                             @method('DELETE')
-                            <input type="submit" name="" value="Delete" style="background: none; border: none; color: #3490dc; padding: 0;">
-                        </form> --}}
+                        </form>
                         <button class="delete-this" @click="deleteComic">Delete</button>
 
                     </div>
