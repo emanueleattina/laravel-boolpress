@@ -3,18 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $posts = Post::all();
 
-        return view('guest.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
-    public function show(string $slug) {
-        $post = Post::where('slug', '=', $slug)->first();
+    public function show(string $slug)
+    {
+        // $post = Post::where('slug', '=', $slug)->first();
 
         return view('guests.posts.show', compact('post'));
     }

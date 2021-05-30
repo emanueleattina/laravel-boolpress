@@ -77,6 +77,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <h1>{{ $post['title'] }}</h1>
+                        <h4>Category: {{ $post->category->name }}</h4>
                         <p>{{ $post['content'] }}</p>
                     </div>
                 </div>

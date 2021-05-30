@@ -25,6 +25,19 @@
             <form action="{{ route('admin.posts.update', ['post' => $post->id]) }}" method="post">
                 @csrf
                 @method('PATCH')
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control @error('category') is-invalid @enderror" id="category" name="category_id">
+                        <option value="">Select</option>
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}" {{ $category->id == old('category_id', $post->category_id) ? 'selected' : '' }}>{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('category')
+                        <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
                 
                 <div class="form-group">
                     <label for="title">Title</label>
