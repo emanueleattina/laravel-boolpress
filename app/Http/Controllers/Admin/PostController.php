@@ -64,7 +64,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         // $post = Post::where('slug', '=', $slug)->first();
-        dd('ciao');
+        // dd('ciao');
         return view('admin.posts.show', ['post' => $post]);
     }
 

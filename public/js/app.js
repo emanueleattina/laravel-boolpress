@@ -37343,17 +37343,26 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    Axios = _require["default"];
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 Vue.config.devtools = true;
 var app = new Vue({
   el: '#root',
   data: {
-    deleteThis: false
+    deleteThis: false,
+    id: null
   },
   methods: {
-    deleteComic: function deleteComic() {
+    deletePost: function deletePost(id) {
       this.deleteThis = true;
+      this.id = id;
+    },
+    deleteConfirm: function deleteConfirm() {
+      axios["delete"]("http://localhost:8000/admin/posts/".concat(this.id));
+      this.deleteThis = false;
     }
   }
 });

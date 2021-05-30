@@ -18,14 +18,14 @@
                     <div class="d-flex justify-content-between">
                         <a class="btn btn-info" href="{{ route('admin.posts.show', ['post' => $post->id]) }}">Show</a>
                         <a class="btn btn-primary" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">Edit</a>
-                        <a class="btn btn-danger" onclick="event.preventDefault(); this.nextElementSibling.submit();">
+                        {{-- <a class="btn btn-danger" onclick="event.preventDefault(); this.nextElementSibling.submit();">
                             Delete
-                        </a>
-                        <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="POST" class="d-none">
+                        </a> --}}
+                        {{-- <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="POST" class="d-none">
                             @csrf
                             @method('DELETE')
-                        </form>
-                        <button class="delete-this" @click="deleteComic">Delete</button>
+                        </form> --}}
+                        <a class="btn btn-danger" @click="deletePost({{$post->id}})">Delete</a>
 
                     </div>
                 </div>
@@ -36,12 +36,13 @@
             <div class="sure">
                 <h1>Sure?</h1>
                 <div class="buttons">
-                    <form action="{{route('admin.posts.destroy', ['post' => $post->id])}}" method="post">
+                    <button class="btn btn-success mr-2" @click="deleteConfirm">yes</button>
+                    <button class="btn btn-danger ml-2" @click="deleteThis = false">no</button>
+                    {{-- <form action="{{ route('admin.posts.destroy', ['post' => $post->id]) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" name="" value="yes">
-                    </form>
-                    <button @click="deleteThis = false" style="border: none;">no</button>
+                        <input class="btn btn-success ml-2" type="submit" value="yes">
+                    </form> --}}
                 </div>
             </div>
         </div>

@@ -10970,38 +10970,10 @@ a.text-dark:focus {
   justify-content: center;
 }
 
-.delete-popup .sure .buttons button {
-  background: grey;
-  color: white;
-  margin: 5px;
-  padding: 5px 15px;
-  border-radius: 3px;
-}
-
-.delete-popup .sure .buttons button:hover {
-  background: rgba(128, 128, 128, 0.85);
-}
-
 .delete-popup .sure .buttons form {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.delete-popup .sure .buttons form input {
-  background: grey;
-  color: white;
-  margin: 5px;
-  padding: 5px 15px;
-  border-radius: 3px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: none;
-}
-
-.delete-popup .sure .buttons form input:hover {
-  background: rgba(128, 128, 128, 0.85);
 }
 
 .delete-this {
