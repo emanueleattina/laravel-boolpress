@@ -25,6 +25,19 @@
             <form action="{{ route('admin.posts.store') }}" method="post">
                 @csrf
                 @method('POST')
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control @error('category') is-invalid @enderror" id="category" name="category_id">
+                        <option value="">Select</option>
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('category')
+                        <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
                 
                 <div class="form-group">
                     <label for="title">Title</label>
