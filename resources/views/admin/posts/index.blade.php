@@ -26,7 +26,6 @@
                             @method('DELETE')
                         </form> --}}
                         <a class="btn btn-danger" @click="deletePost({{$post->id}})">Delete</a>
-
                     </div>
                 </div>
             </div>
