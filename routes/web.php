@@ -20,8 +20,12 @@ Route::get('/categories/{slug}', 'CategoryController@index')->name('category.ind
 
 Auth::routes();
 
-Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
+Route::middleware('auth')
+    ->namespace('Admin')
+    ->prefix('admin')
+    ->name('admin.')
     ->group(function () {
         Route::get('/', 'HomeController@index')->name('index');
         Route::resource('/posts', 'PostController');
+        Route::resource('/categories', 'CategoryController');
 });

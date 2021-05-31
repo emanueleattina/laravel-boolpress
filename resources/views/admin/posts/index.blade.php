@@ -12,7 +12,7 @@
         <div class="col-md-3 mb-4">
             <div class="card">
                 <div class="card-header">{{ $post->title }}</div>
-                <div class="card-body">Category: {{ $post->category->name }}</div>
+                <div>Category: {{ $post->category->name }}</div>
                 <div class="card-body">
                     {{ $post->content }}
                     <div class="d-flex justify-content-between">
@@ -26,6 +26,7 @@
                             @method('DELETE')
                         </form> --}}
                         <a class="btn btn-danger" @click="deletePost({{$post->id}})">Delete</a>
+
                     </div>
                 </div>
             </div>
