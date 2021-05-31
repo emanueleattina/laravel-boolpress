@@ -12,12 +12,14 @@ var app = new Vue ({
     },
     methods: {
         deletePost: function(id) {
-            this.deleteThis = true;
+            // this.deleteThis = true;
             this.id = id;
+
         },
         deleteConfirm: function() {
             axios.delete(`http://localhost:8000/admin/posts/${this.id}`);
             this.deleteThis = false;
-        }
+        },
+
     },
 });

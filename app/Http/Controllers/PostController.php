@@ -14,7 +14,7 @@ class PostController extends Controller
     {
         $posts = Post::all();
 
-        return view('admin.posts.index', compact('posts'));
+        return view('guests.posts.index', compact('posts'));
     }
 
     public function show(string $slug)

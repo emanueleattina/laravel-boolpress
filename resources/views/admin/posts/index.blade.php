@@ -12,7 +12,7 @@
         <div class="col-md-3 mb-4">
             <div class="card">
                 <div class="card-header">{{ $post->title }}</div>
-
+                <div class="card-body">Category: {{ $post->category->name }}</div>
                 <div class="card-body">
                     {{ $post->content }}
                     <div class="d-flex justify-content-between">
@@ -33,6 +33,7 @@
         </div>
         @endforeach
         <div class="delete-popup" v-if="deleteThis == true">
+        {{-- <div class="delete-popup" > --}}
             <div class="sure">
                 <h1>Sure?</h1>
                 <div class="buttons">
