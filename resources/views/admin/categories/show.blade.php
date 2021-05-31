@@ -6,7 +6,7 @@
         @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                    <a href="{{ route('admin.posts.index') }}">Back</a>
+                    <a href="{{ route('admin.categories.index') }}">Back</a>
                 @else
                     <a href="{{ route('login') }}">Login</a>
     
@@ -20,9 +20,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>{{ $post['title'] }}</h1>
-                    <h4>Category: <a href="">{{ $post->category->name }}</a></h4>
-                    <p>{{ $post['content'] }}</p>
+                    <h1>{{ $category['name'] }}</h1>
                 </div>
             </div>
         </div>
